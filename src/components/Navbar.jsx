@@ -5,6 +5,7 @@ import styles from './Navbar.module.css';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
@@ -35,8 +36,41 @@ function Navbar() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (menuOpen) {
+        setHeaderVisible(true);
+        return;
+      }
+
+      if (currentScrollY <= 10) {
+        setHeaderVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setHeaderVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        setHeaderVisible(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuOpen]);
+
   return (
-    <header className={`${styles.header} ${menuOpen ? styles.headerOpen : ''}`}>
+    <header
+      className={`
+        ${styles.header}
+        ${menuOpen ? styles.headerOpen : ''}
+        ${!headerVisible ? styles.headerHidden : ''}
+      `}
+    >
       <div className={`wideContainer ${styles.inner}`}>
         <Link aria-label={companyInfo.name} className={styles.brand} to="/">
           {companyInfo.shortName}

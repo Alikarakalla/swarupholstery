@@ -6,7 +6,15 @@
   z-index: 50;
   background: rgba(250, 250, 235, 0.8);
   backdrop-filter: blur(14px);
-  transition: background-color var(--transition), border-color var(--transition);
+  transform: translateY(0);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    transform 280ms ease;
+}
+
+.headerHidden {
+  transform: translateY(-100%);
 }
 
 .headerOpen {
@@ -97,6 +105,11 @@
 @media (max-width: 980px) {
   .inner {
     gap: 1rem;
+    min-height: 4.2rem;
+    /* 🔥 smaller height */
+    padding-top: 0.6rem;
+    /* 🔥 reduced padding */
+    padding-bottom: 0.6rem;
   }
 
   .desktopNav,
@@ -110,25 +123,30 @@
     align-items: center;
     justify-content: center;
     gap: 0.28rem;
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    border: 1px solid rgba(1, 50, 32, 0.1);
-    background: rgba(255, 255, 255, 0.28);
-    backdrop-filter: blur(12px);
-    transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+
+    width: 2.6rem;
+    height: 2.6rem;
+
+    border: none;
+    /* ❌ remove border */
+    background: transparent;
+    /* ❌ remove white bg */
+    backdrop-filter: none;
+    /* ❌ remove blur */
+
+    transition: transform var(--transition);
   }
 
   .menuButton span {
-    width: 1.1rem;
-    height: 1px;
+    width: 1.2rem;
+    height: 1.5px;
     background: var(--atelier-green-deep);
-    transition: transform 220ms ease, opacity 220ms ease, background-color 220ms ease;
+    transition: all 220ms ease;
+    border-radius: 2px;
   }
 
   .menuButtonOpen {
-    background: var(--atelier-green-deep);
-    border-color: var(--atelier-green-deep);
+    background: transparent;
   }
 
   .menuButtonOpen span {
@@ -234,6 +252,6 @@
 
 @media (max-width: 640px) {
   .brand {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
