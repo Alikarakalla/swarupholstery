@@ -1,0 +1,40 @@
+.section {
+  margin-bottom: 4rem;
+}
+
+.scroller {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.button {
+  flex: 0 0 auto;
+  min-height: 2.7rem;
+  padding: 0 1.8rem;
+  border-radius: 999px;
+  background: #eddec5;
+  color: #6c614e;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #e9e9db;
+  transform: translateY(-1px);
+}
+
+.active {
+  background: var(--atelier-green);
+  color: #ffffff;
+}

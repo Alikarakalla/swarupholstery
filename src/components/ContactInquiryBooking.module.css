@@ -1,0 +1,294 @@
+.section {
+  margin-bottom: 8rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.formColumn,
+.calendarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.headingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.headingBlock h2 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--atelier-green);
+}
+
+.headingBlock p {
+  font-size: 0.95rem;
+  color: var(--atelier-muted);
+}
+
+.rule {
+  width: 3rem;
+  height: 1px;
+  background: #cba72f;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: rgba(65, 73, 67, 0.6);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 0.9rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(193, 200, 194, 0.3);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--atelier-green);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-bottom-color: #735c00;
+  box-shadow: none;
+}
+
+.field textarea {
+  resize: none;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.notice {
+  padding: 0.9rem 1rem;
+  background: rgba(203, 167, 47, 0.1);
+  color: var(--atelier-green);
+  font-weight: 600;
+}
+
+.submitWrap {
+  padding-top: 0.5rem;
+}
+
+.shineWrap {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3.6rem;
+  padding: 0 2rem;
+  background: #cba72f;
+  color: var(--atelier-green);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.submitButton:hover,
+.submitButton:focus-visible {
+  transform: translateY(-1px);
+  background: #e9c349;
+}
+
+.calendarShell {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  background: #f4f5e6;
+}
+
+.paperOverlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.calendarContent {
+  position: relative;
+  z-index: 1;
+}
+
+.calendarCard {
+  padding: 2rem;
+  background: #fafaeb;
+  box-shadow: 0 14px 32px rgba(1, 27, 15, 0.06);
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.calendarHeader h3 {
+  font-size: 1.5rem;
+  color: var(--atelier-green);
+}
+
+.calendarControls {
+  display: flex;
+  gap: 1rem;
+  color: var(--atelier-green);
+}
+
+.calendarControls span {
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.calendarControls span:hover {
+  color: #735c00;
+}
+
+.weekdayRow {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.weekdayRow span {
+  text-align: center;
+  color: rgba(65, 73, 67, 0.4);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.dayCell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4rem;
+  color: var(--atelier-muted);
+  font-size: 0.9rem;
+}
+
+.dayMuted {
+  opacity: 0.2;
+}
+
+.dayOutlined {
+  border: 1px solid rgba(117, 92, 0, 0.2);
+  font-weight: 700;
+}
+
+.daySelected {
+  background: var(--atelier-green);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.timesBlock {
+  margin-top: 2rem;
+}
+
+.timesBlock label {
+  display: block;
+  margin-bottom: 1rem;
+  color: rgba(65, 73, 67, 0.6);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.timeButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.timeButton {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(193, 200, 194, 0.3);
+  color: var(--atelier-green);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.timeButton:hover,
+.timeButton:focus-visible {
+  border-color: #cba72f;
+  background: #cba72f;
+  color: var(--atelier-green);
+}
+
+.timeSelected {
+  border-color: #cba72f;
+  background: #cba72f;
+  color: var(--atelier-green);
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    margin-bottom: 5rem;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .calendarShell,
+  .calendarCard {
+    padding: 1.5rem;
+  }
+}

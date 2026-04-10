@@ -1,0 +1,140 @@
+.section {
+  padding: 8rem 0;
+  background: #f4f5e6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #735c00;
+}
+
+.header h2 {
+  max-width: 40rem;
+  font-size: clamp(2.6rem, 5vw, 3rem);
+  line-height: 1.08;
+  color: var(--atelier-green-deep);
+}
+
+.headerLink {
+  display: inline-flex;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--atelier-green-deep);
+  color: var(--atelier-green-deep);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(15rem, 21rem);
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  min-height: 15rem;
+  background: var(--atelier-green);
+}
+
+.cardWide {
+  grid-column: span 2;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms ease, opacity 700ms ease;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(0, 27, 15, 0.75));
+}
+
+.cardContent {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1;
+  color: var(--atelier-cream);
+}
+
+.cardContent h3 {
+  margin-bottom: 0.45rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: inherit;
+}
+
+.cardContent p {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(241, 242, 227, 0.8);
+}
+
+.cardDark img {
+  opacity: 0.62;
+}
+
+.card:hover img,
+.card:focus-visible img {
+  transform: scale(1.08);
+}
+
+.cardDark:hover img,
+.cardDark:focus-visible img {
+  opacity: 0.4;
+}
+
+@media (max-width: 980px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(18rem, auto);
+  }
+
+  .cardWide {
+    grid-column: auto;
+  }
+
+  .cardContent {
+    left: 1.3rem;
+    right: 1.3rem;
+    bottom: 1.3rem;
+  }
+}

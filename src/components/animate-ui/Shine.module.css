@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: 100%;
+}
+
+.sheen {
+  position: absolute;
+  inset: -45%;
+  width: 38%;
+  background: linear-gradient(90deg, transparent 0%, var(--shine-color) 48%, transparent 100%);
+  opacity: var(--shine-opacity);
+  pointer-events: none;
+  transform: rotate(var(--shine-rotation));
+  filter: blur(6px);
+  mix-blend-mode: screen;
+}

@@ -1,0 +1,78 @@
+.section {
+  padding: 8rem 0;
+  background: #f4f5e6;
+}
+
+.inner {
+  text-align: center;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: #735c00;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.inner h2 {
+  margin-bottom: 4rem;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  color: var(--atelier-green);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+  border-radius: 999px;
+  background: #e3e3d5;
+}
+
+.icon {
+  color: var(--atelier-green);
+}
+
+.card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.45rem;
+  color: var(--atelier-green);
+}
+
+.card p {
+  max-width: 18rem;
+  color: var(--atelier-muted);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 5rem 0;
+  }
+}

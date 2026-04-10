@@ -1,0 +1,92 @@
+.section {
+  padding: 8rem 0;
+  background: var(--atelier-background);
+}
+
+.inner {
+  max-width: 56rem;
+  text-align: center;
+}
+
+.inner h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(3rem, 5vw, 3.75rem);
+  line-height: 1.15;
+  color: var(--atelier-green);
+}
+
+.inner p {
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--atelier-muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.shineWrap {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.8rem;
+  padding: 0 2.2rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.primaryButton {
+  background: #cba72f;
+  color: var(--atelier-green);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(193, 200, 194, 0.5);
+  color: var(--atelier-green);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  transform: translateY(-1px);
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  background: #e9c349;
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  background: #f4f5e6;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .shineWrap {
+    width: 100%;
+  }
+}

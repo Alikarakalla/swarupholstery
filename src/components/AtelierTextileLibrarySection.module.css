@@ -1,0 +1,156 @@
+.section {
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+  background: var(--atelier-green);
+}
+
+.grainOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5rem;
+  align-items: center;
+}
+
+.content {
+  color: #fafaeb;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: #cba72f;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.content h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  color: #fafaeb;
+}
+
+.content h2 span {
+  font-style: italic;
+}
+
+.content p {
+  max-width: 32rem;
+  margin-bottom: 2rem;
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(111, 156, 132, 0.92);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fafaeb;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.tags span:hover {
+  background: #cba72f;
+  color: var(--atelier-green);
+}
+
+.media {
+  position: relative;
+}
+
+.imageFrame {
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.imageFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1000ms ease;
+}
+
+.media:hover .imageFrame img {
+  transform: scale(1.08);
+}
+
+.badge {
+  position: absolute;
+  left: -1.5rem;
+  bottom: -1.5rem;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.75rem;
+  background: #cba72f;
+  color: var(--atelier-green);
+}
+
+.badge strong {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.badge span {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .badge {
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .content h2 {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+  }
+
+  .badge {
+    position: static;
+    margin-top: 1rem;
+    width: fit-content;
+  }
+}
