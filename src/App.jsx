@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/animate-ui/PageTransition';
+import { ScrollProgress, ScrollProgressProvider } from './components/animate-ui/ScrollProgress';
 import Contact from './pages/Contact';
 import Fabrics from './pages/Fabrics';
 import Gallery from './pages/Gallery';
@@ -21,64 +22,67 @@ function App() {
         Skip to content
       </a>
       <ScrollToTop />
-      <Navbar />
-      <main id="main-content">
-        <AnimatePresence mode="wait">
-          <Routes key={location.pathname} location={location}>
-            <Route
-              path="/"
-              element={
-                <PageTransition>
-                  <Home />
-                </PageTransition>
-              }
-            />
-            <Route path="/about" element={<Navigate replace to="/" />} />
-            <Route
-              path="/services"
-              element={
-                <PageTransition>
-                  <Services />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/gallery"
-              element={
-                <PageTransition>
-                  <Gallery />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="/fabrics"
-              element={
-                <PageTransition>
-                  <Fabrics />
-                </PageTransition>
-              }
-            />
-            <Route path="/quote" element={<Navigate replace to="/contact" />} />
-            <Route
-              path="/contact"
-              element={
-                <PageTransition>
-                  <Contact />
-                </PageTransition>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <PageTransition>
-                  <NotFound />
-                </PageTransition>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
-      </main>
-      <Footer />
+      <ScrollProgressProvider global>
+        <Navbar />
+        <ScrollProgress />
+        <main id="main-content">
+          <AnimatePresence mode="wait">
+            <Routes key={location.pathname} location={location}>
+              <Route
+                path="/"
+                element={
+                  <PageTransition>
+                    <Home />
+                  </PageTransition>
+                }
+              />
+              <Route path="/about" element={<Navigate replace to="/" />} />
+              <Route
+                path="/services"
+                element={
+                  <PageTransition>
+                    <Services />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/gallery"
+                element={
+                  <PageTransition>
+                    <Gallery />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/fabrics"
+                element={
+                  <PageTransition>
+                    <Fabrics />
+                  </PageTransition>
+                }
+              />
+              <Route path="/quote" element={<Navigate replace to="/contact" />} />
+              <Route
+                path="/contact"
+                element={
+                  <PageTransition>
+                    <Contact />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <PageTransition>
+                    <NotFound />
+                  </PageTransition>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
+        </main>
+        <Footer />
+      </ScrollProgressProvider>
     </div>
   );
 }

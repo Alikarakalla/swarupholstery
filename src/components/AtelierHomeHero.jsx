@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom';
-import AtelierIcon from './AtelierIcon';
 import { Effect, Effects } from './animate-ui/Effect';
+import MotionCarousel from './animate-ui/MotionCarousel';
 import Shine from './animate-ui/Shine';
 import styles from './AtelierHomeHero.module.css';
 
-function AtelierHomeHero({ image }) {
+function AtelierHomeHero({ slides }) {
   return (
     <section className={styles.hero}>
       <div className={styles.mediaLayer}>
-        <img alt="Master craftsman" src={image} />
+        <MotionCarousel
+          autoplayDelay={5200}
+          options={{ dragFree: false, loop: true }}
+          renderSlide={(slide) => (
+            <div className={styles.heroSlide}>
+              <img alt={slide.alt} src={slide.image} />
+            </div>
+          )}
+          slides={slides}
+        />
       </div>
       <div className={styles.overlay} />
       <div className={`wideContainer ${styles.contentWrap}`}>
@@ -39,10 +48,6 @@ function AtelierHomeHero({ image }) {
                   Book a consultation
                 </Link>
               </Shine>
-              <Link className={styles.secondaryLink} to="/gallery">
-                View portfolio
-                <AtelierIcon className={styles.arrowIcon} name="arrow_forward" />
-              </Link>
             </div>
           </Effect>
         </div>

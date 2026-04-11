@@ -11,6 +11,7 @@ import {
   designReferenceImages,
   featuredTestimonial,
   homeBentoServices,
+  homeHeroSlides,
   homePhilosophyPoints,
   materialLibraryTags,
 } from '../data/siteData';
@@ -24,7 +25,7 @@ function Home() {
         title={companyInfo.name}
       />
 
-      <AtelierHomeHero image={designReferenceImages.hero} />
+      <AtelierHomeHero slides={homeHeroSlides} />
       <AtelierPhilosophy
         accentImage={designReferenceImages.philosophyAccent}
         image={designReferenceImages.philosophyPrimary}

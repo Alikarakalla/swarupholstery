@@ -10,7 +10,14 @@
   transition:
     background-color var(--transition),
     border-color var(--transition),
+    box-shadow var(--transition),
     transform 280ms ease;
+}
+
+.innerPageHeader {
+  box-shadow:
+    inset 0 -1px 0 rgba(1, 50, 32, 0.06),
+    0 10px 30px rgba(1, 27, 15, 0.05);
 }
 
 .headerHidden {

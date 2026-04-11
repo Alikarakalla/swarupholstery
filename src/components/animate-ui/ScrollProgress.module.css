@@ -1,0 +1,25 @@
+.track {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  height: 4px;
+  background: rgba(1, 50, 32, 0.08);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.indicator {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background: linear-gradient(90deg, #c5a059 0%, #e9c349 36%, #013220 100%);
+  box-shadow: 0 0 20px rgba(201, 167, 47, 0.28);
+}
+
+@media (max-width: 640px) {
+  .track {
+    height: 3px;
+  }
+}

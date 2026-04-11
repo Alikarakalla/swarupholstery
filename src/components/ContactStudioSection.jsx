@@ -49,9 +49,13 @@ function ContactStudioSection({ details, map }) {
           slide="left"
           zoom={0.98}
         >
-          <img alt={map.imageAlt} src={map.image} />
-          <div className={styles.mapOverlay} />
-          <div className={styles.marker} />
+          <iframe
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src={map.embedUrl}
+            title={map.title}
+          />
         </Effect>
       </div>
     </section>

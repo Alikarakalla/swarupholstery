@@ -170,59 +170,108 @@
   color: var(--atelier-green);
 }
 
-.calendarControls span {
-  cursor: pointer;
-  transition: color var(--transition);
+.calendarNavButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(193, 200, 194, 0.4);
+  border-radius: 999px;
+  color: var(--atelier-green);
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition), transform var(--transition);
 }
 
-.calendarControls span:hover {
+.calendarNavButton:hover,
+.calendarNavButton:focus-visible {
   color: #735c00;
+  border-color: rgba(117, 92, 0, 0.28);
+  background: rgba(203, 167, 47, 0.08);
+  transform: translateY(-1px);
 }
 
-.weekdayRow {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+.calendarPicker {
+  --rdp-accent-color: #013220;
+  --rdp-accent-background-color: #013220;
+  --rdp-animation_duration: 0.2s;
+  --rdp-day_button-width: 2.65rem;
+  --rdp-day_button-height: 2.65rem;
+  --rdp-day-width: 2.65rem;
+  --rdp-day-height: 2.65rem;
+  --rdp-disabled-opacity: 0.28;
+  --rdp-outside-opacity: 0.28;
+  --rdp-nav_button-width: 0;
+  --rdp-nav_button-height: 0;
 }
 
-.weekdayRow span {
-  text-align: center;
-  color: rgba(65, 73, 67, 0.4);
+:global(.rdp-root) {
+  margin: 0;
+}
+
+:global(.rdp-months) {
+  justify-content: center;
+}
+
+:global(.rdp-month) {
+  width: 100%;
+}
+
+:global(.rdp-month_grid) {
+  width: 100%;
+}
+
+:global(.rdp-weekdays) {
+  margin-bottom: 0.65rem;
+}
+
+:global(.rdp-weekday) {
+  width: 2.65rem;
+  height: 2rem;
+  color: rgba(65, 73, 67, 0.42);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.daysGrid {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.5rem;
+:global(.rdp-day) {
+  padding: 0.18rem;
 }
 
-.dayCell {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.4rem;
+:global(.rdp-day_button) {
+  border: 1px solid transparent;
+  border-radius: 999px;
   color: var(--atelier-muted);
   font-size: 0.9rem;
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition), transform var(--transition);
 }
 
-.dayMuted {
-  opacity: 0.2;
+:global(.rdp-day_button:hover),
+:global(.rdp-day_button:focus-visible) {
+  border-color: rgba(117, 92, 0, 0.22);
+  background: rgba(203, 167, 47, 0.08);
+  color: var(--atelier-green);
+  transform: translateY(-1px);
 }
 
-.dayOutlined {
-  border: 1px solid rgba(117, 92, 0, 0.2);
-  font-weight: 700;
-}
-
-.daySelected {
+:global(.rdp-selected .rdp-day_button) {
   background: var(--atelier-green);
+  border-color: var(--atelier-green);
   color: #ffffff;
+}
+
+:global(.rdp-today:not(.rdp-selected) .rdp-day_button) {
+  border-color: rgba(117, 92, 0, 0.25);
   font-weight: 700;
+}
+
+:global(.rdp-outside .rdp-day_button) {
+  color: rgba(65, 73, 67, 0.35);
+}
+
+:global(.rdp-disabled .rdp-day_button) {
+  color: rgba(65, 73, 67, 0.3);
+  text-decoration: line-through;
 }
 
 .timesBlock {
@@ -230,13 +279,28 @@
 }
 
 .timesBlock label {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   margin-bottom: 1rem;
   color: rgba(65, 73, 67, 0.6);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.timezone {
+  color: #735c00;
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+}
+
+.selectedDate {
+  margin-bottom: 1rem;
+  color: var(--atelier-green);
+  font-size: 0.88rem;
+  font-weight: 600;
 }
 
 .timeButtons {
@@ -282,6 +346,37 @@
     margin-bottom: 5rem;
   }
 
+  .layout {
+    gap: 2rem;
+  }
+
+  .formColumn {
+    order: 2;
+    gap: 1.75rem;
+  }
+
+  .calendarShell {
+    order: 1;
+  }
+
+  .headingBlock {
+    gap: 0.65rem;
+  }
+
+  .headingBlock h2 {
+    font-size: 1.85rem;
+    line-height: 1.14;
+  }
+
+  .headingBlock p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .form {
+    gap: 1.5rem;
+  }
+
   .formGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -290,5 +385,59 @@
   .calendarShell,
   .calendarCard {
     padding: 1.5rem;
+  }
+
+  .calendarPicker {
+    --rdp-day_button-width: 2.2rem;
+    --rdp-day_button-height: 2.2rem;
+    --rdp-day-width: 2.2rem;
+    --rdp-day-height: 2.2rem;
+  }
+
+  :global(.rdp-weekday) {
+    width: 2.2rem;
+    font-size: 0.56rem;
+  }
+
+  .calendarHeader {
+    margin-bottom: 1.25rem;
+  }
+
+  .calendarHeader h3 {
+    font-size: 1.25rem;
+  }
+
+  .calendarControls {
+    gap: 0.65rem;
+  }
+
+  .calendarNavButton {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .timesBlock {
+    margin-top: 1.5rem;
+  }
+
+  .selectedDate {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .timeButtons {
+    gap: 0.6rem;
+  }
+
+  .timeButton {
+    min-height: 2.35rem;
+    padding: 0 0.8rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  .submitButton {
+    width: 100%;
+    justify-content: center;
   }
 }

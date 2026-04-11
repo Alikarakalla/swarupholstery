@@ -1,0 +1,86 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.slideInner {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1px solid rgba(241, 242, 227, 0.34);
+  border-radius: 999px;
+  background: rgba(241, 242, 227, 0.16);
+  backdrop-filter: blur(10px);
+  transition:
+    width 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
+.dotActive {
+  width: 2.4rem;
+  background: rgba(203, 167, 47, 0.92);
+  border-color: rgba(233, 195, 73, 0.96);
+}
+
+.dot:hover,
+.dot:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .dots {
+    right: 50%;
+    bottom: 1rem;
+    transform: translateX(50%);
+  }
+
+  .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .dotActive {
+    width: 2rem;
+  }
+}

@@ -2,7 +2,6 @@ import bentoCommercialRef from '../assets/reference/bento-commercial.jpg';
 import bentoCurtainsRef from '../assets/reference/bento-curtains.jpg';
 import bentoManufacturingRef from '../assets/reference/bento-manufacturing.jpg';
 import bentoRestorationRef from '../assets/reference/bento-restoration.jpg';
-import contactMapRef from '../assets/reference/contact-map.jpg';
 import contactTextureFabricsRef from '../assets/reference/contact-texture-fabrics.jpg';
 import contactTextureStitchingRef from '../assets/reference/contact-texture-stitching.jpg';
 import contactTextureToolsRef from '../assets/reference/contact-texture-tools.jpg';
@@ -78,6 +77,24 @@ export const designReferenceImages = {
   bentoCommercial: bentoCommercialRef,
   materialLibrary: materialLibraryRef,
 };
+
+export const homeHeroSlides = [
+  {
+    id: 'atelier-hero',
+    image: heroRef,
+    alt: 'Master craftsman hand-stitching premium upholstery in a luxury atelier',
+  },
+  {
+    id: 'atelier-materials',
+    image: materialLibraryRef,
+    alt: 'Luxury upholstery materials and fabric swatches displayed in the atelier',
+  },
+  {
+    id: 'atelier-craft',
+    image: servicesFurnitureReupholsteryRef,
+    alt: 'Statement upholstery piece showcasing premium craftsmanship and restoration detail',
+  },
+];
 
 export const homePhilosophyPoints = [
   {
@@ -472,40 +489,20 @@ export const contactProjectTypes = [
 ];
 
 export const contactCalendarPreview = {
-  month: 'November 2026',
-  weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  days: [
-    { label: '26', muted: true },
-    { label: '27', muted: true },
-    { label: '28', muted: true },
-    { label: '29', muted: true },
-    { label: '30', muted: true },
-    { label: '31', muted: true },
-    { label: '1' },
-    { label: '2' },
-    { label: '3' },
-    { label: '4' },
-    { label: '5' },
-    { label: '6' },
-    { label: '7' },
-    { label: '8' },
-    { label: '9' },
-    { label: '10' },
-    { label: '11' },
-    { label: '12' },
-    { label: '13' },
-    { label: '14', outlined: true },
-    { label: '15', selected: true },
-    { label: '16' },
-    { label: '17' },
-    { label: '18' },
-    { label: '19' },
-    { label: '20' },
-    { label: '21' },
-    { label: '22' },
-  ],
-  times: ['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'],
-  selectedTime: '11:30 AM',
+  initialMonthOffset: 0,
+  minAdvanceDays: 1,
+  maxAdvanceMonths: 6,
+  timezoneLabel: 'Ottawa (ET)',
+  weekdaySlots: {
+    1: ['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'],
+    2: ['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'],
+    3: ['09:30 AM', '12:00 PM', '02:30 PM', '05:00 PM'],
+    4: ['09:00 AM', '11:30 AM', '02:00 PM', '04:30 PM'],
+    5: ['09:00 AM', '11:00 AM', '01:30 PM', '03:30 PM'],
+    6: ['10:00 AM', '12:30 PM'],
+  },
+  blockedDates: [],
+  specialSlots: {},
 };
 
 export const contactStudioDetails = [
@@ -527,8 +524,9 @@ export const contactStudioDetails = [
 ];
 
 export const contactStudioMap = {
-  image: contactMapRef,
-  imageAlt: 'Monochrome map with atelier marker',
+  embedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.794182037136!2d-75.6292572!3d45.4134898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0fb68f631d13%3A0x4841edd553f43f4c!2sSWAR%20UPHOLSTERY%20INC.!5e0!3m2!1sen!2sfr!4v1775898027961!5m2!1sen!2sfr',
+  title: 'SWAR UPHOLSTERY INC. map',
 };
 
 export const contactTextureShowcase = [

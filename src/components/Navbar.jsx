@@ -7,6 +7,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(true);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     setMenuOpen(false);
@@ -67,6 +68,7 @@ function Navbar() {
     <header
       className={`
         ${styles.header}
+        ${!isHomePage ? styles.innerPageHeader : ''}
         ${menuOpen ? styles.headerOpen : ''}
         ${!headerVisible ? styles.headerHidden : ''}
       `}
