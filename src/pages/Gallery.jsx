@@ -5,9 +5,9 @@ import PortfolioFinalCta from '../components/PortfolioFinalCta';
 import PortfolioMethodology from '../components/PortfolioMethodology';
 import Seo from '../components/Seo';
 import {
-  portfolioBentoItems,
   portfolioFeaturedCaseStudy,
   portfolioFinalCta,
+  portfolioGalleryItems,
   portfolioMethodology,
   portfolioPageIntro,
 } from '../data/siteData';
@@ -22,7 +22,7 @@ function Gallery() {
 
       <AtelierPageIntro {...portfolioPageIntro} />
       <PortfolioFeaturedCaseStudy study={portfolioFeaturedCaseStudy} />
-      <PortfolioBentoGrid items={portfolioBentoItems} />
+      <PortfolioBentoGrid items={portfolioGalleryItems} />
       <PortfolioMethodology steps={portfolioMethodology} />
       <PortfolioFinalCta cta={portfolioFinalCta} />
     </>

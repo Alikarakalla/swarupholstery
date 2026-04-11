@@ -263,6 +263,71 @@ export const portfolioBentoItems = [
   },
 ];
 
+export const portfolioGalleryItems = [
+  {
+    type: 'project',
+    title: 'The Contemporary Modular',
+    subtitle: 'Linen & Ash Wood • Residential Project',
+    description:
+      'A tailored residential commission built around quiet lines, deep comfort, and durable upholstery selected for daily living.',
+    tags: ['Linen', 'Ash Wood', 'Residential'],
+    image: portfolioModularRef,
+    imageAlt: 'Modern minimalist living room with bespoke modular sofa',
+    span: 'wide',
+  },
+  {
+    type: 'detail',
+    title: 'Tactile Excellence',
+    description:
+      'Every material in our library is selected for its longevity and sensory profile. We specialize in working with rare textiles that demand specialized handling.',
+    icon: 'texture',
+    swatches: [
+      {
+        color: '#eddec5',
+        label: 'Natural Linen',
+        title: 'Quiet Warmth',
+        description:
+          'Belgian-inspired neutrals that soften large seating compositions and keep modern interiors calm and breathable.',
+      },
+      {
+        color: '#cba72f',
+        label: 'Golden Accent',
+        title: 'Statement Contrast',
+        description:
+          'Accent tones used to introduce warmth, piping, and subtle luxury detailing without overpowering the main upholstery fabric.',
+      },
+      {
+        color: '#717973',
+        label: 'Charcoal Structure',
+        title: 'Architectural Balance',
+        description:
+          'Cool structural tones that pair beautifully with leather, wool blends, and commercial lounge seating applications.',
+      },
+    ],
+  },
+  {
+    type: 'project',
+    title: 'Leather Detail',
+    subtitle: 'Full Grain • Saddlery Stitching',
+    description:
+      'Close-detail craftsmanship focused on seam accuracy, panel consistency, and hand-finished leather edges.',
+    tags: ['Full Grain', 'Saddlery Stitching', 'Detail Work'],
+    image: portfolioLeatherDetailRef,
+    imageAlt: 'Close up detail of hand-stitched leather seams',
+  },
+  {
+    type: 'project',
+    title: 'The Mayfair Club Lounge',
+    subtitle: 'Commercial • Wool Blends',
+    description:
+      'A hospitality seating refresh designed for high traffic, tonal elegance, and long-term durability across a refined lounge setting.',
+    tags: ['Commercial', 'Wool Blends', 'Hospitality'],
+    image: portfolioClubLoungeRef,
+    imageAlt: 'High-end commercial lounge with bespoke armchairs',
+    span: 'wide',
+  },
+];
+
 export const portfolioMethodology = [
   {
     icon: 'architecture',
@@ -298,6 +363,7 @@ export const fabricsPageIntro = {
   eyebrow: 'The Material Library',
   title: 'Bespoke',
   accent: 'Textiles',
+  mobileInline: true,
   description:
     'Explore our curated selection of global linens, velvet piles, and heritage weaves. Each specimen is selected for its structural integrity and tactile elegance.',
 };
