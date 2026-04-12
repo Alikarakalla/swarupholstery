@@ -96,6 +96,19 @@ export const homeHeroSlides = [
   },
 ];
 
+export const homeBrandPartners = [
+  { name: 'Sunbrella', meta: 'Performance Fabric' },
+  { name: 'Ultrafabrics', meta: 'Premium Upholstery' },
+  { name: 'Maharam', meta: 'Design Textiles' },
+  { name: 'Kvadrat', meta: 'Architectural Fabric' },
+  { name: 'Camira', meta: 'Wool & Contract' },
+  { name: 'Alcantara', meta: 'Automotive Finish' },
+  { name: 'Crypton', meta: 'Protected Textile' },
+  { name: 'Richloom', meta: 'Decorator Fabrics' },
+  { name: 'Stacy Garcia', meta: 'Luxury Textiles' },
+  { name: 'Brisa', meta: 'High-End Leather' },
+];
+
 export const homePhilosophyPoints = [
   {
     number: '01',
