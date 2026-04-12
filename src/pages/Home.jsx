@@ -1,6 +1,7 @@
 import AtelierBentoServices from '../components/AtelierBentoServices';
 import AtelierFeaturedTestimonial from '../components/AtelierFeaturedTestimonial';
 import HomeBrandsMarquee from '../components/HomeBrandsMarquee';
+import HomeGalleryCarousel from '../components/HomeGalleryCarousel';
 import AtelierHomeCta from '../components/AtelierHomeCta';
 import AtelierHomeHero from '../components/AtelierHomeHero';
 import AtelierMaterialLibrary from '../components/AtelierMaterialLibrary';
@@ -13,6 +14,7 @@ import {
   featuredTestimonial,
   homeBentoServices,
   homeBrandPartners,
+  homeGalleryCarouselItems,
   homeHeroSlides,
   homePhilosophyPoints,
   materialLibraryTags,
@@ -29,6 +31,7 @@ function Home() {
 
       <AtelierHomeHero slides={homeHeroSlides} />
       <HomeBrandsMarquee items={homeBrandPartners} />
+      <HomeGalleryCarousel items={homeGalleryCarouselItems} />
       <AtelierPhilosophy
         accentImage={designReferenceImages.philosophyAccent}
         image={designReferenceImages.philosophyPrimary}

@@ -109,6 +109,63 @@ export const homeBrandPartners = [
   { name: 'Brisa', meta: 'High-End Leather' },
 ];
 
+export const homeGalleryCarouselItems = [
+  {
+    id: 'emerald-wingback',
+    eyebrow: 'Heritage Restoration',
+    title: 'Emerald Wingback',
+    description:
+      'Deep-button restoration work with rebuilt structure, refined piping, and a richer velvet finish that brings the silhouette back to life.',
+    image: portfolioFeaturedAfterRef,
+    imageAlt: 'Restored emerald wingback upholstery detail',
+  },
+  {
+    id: 'contemporary-modular',
+    eyebrow: 'Residential Seating',
+    title: 'Contemporary Modular',
+    description:
+      'Clean-lined residential upholstery for modern interiors, focused on comfort, balance, and durable fabric selection.',
+    image: portfolioModularRef,
+    imageAlt: 'Modern modular sofa in a bright interior',
+  },
+  {
+    id: 'leather-detail',
+    eyebrow: 'Leather Craft',
+    title: 'Hand-Finished Leather',
+    description:
+      'Precision seam work and controlled panel alignment for leather pieces that need a sharper, more architectural finish.',
+    image: portfolioLeatherDetailRef,
+    imageAlt: 'Close-up of hand-finished leather upholstery detail',
+  },
+  {
+    id: 'club-lounge',
+    eyebrow: 'Commercial Work',
+    title: 'Club Lounge Seating',
+    description:
+      'Commercial lounge upholstery designed for repeated use, tonal consistency, and a stronger high-end hospitality feel.',
+    image: portfolioClubLoungeRef,
+    imageAlt: 'Commercial lounge seating with upholstered chairs',
+  },
+  {
+    id: 'headboard-commission',
+    eyebrow: 'Custom Commission',
+    title: 'Tailored Headboard',
+    description:
+      'A bespoke bedroom focal point built around proportion, soft geometry, and fabric depth rather than loud ornament.',
+    image: servicesCustomHeadboardsRef,
+    imageAlt: 'Custom upholstered headboard in a refined bedroom',
+  },
+  {
+    id: 'atelier-materials',
+    eyebrow: 'Material Selection',
+    title: 'Studio Fabric Library',
+    description:
+      'Curated swatches and tactile finishing materials that help clients evaluate tone, durability, and comfort before production.',
+    image: materialLibraryRef,
+    imageAlt: 'Curated upholstery fabric library and material selection',
+  },
+];
+
 export const homePhilosophyPoints = [
   {
     number: '01',
